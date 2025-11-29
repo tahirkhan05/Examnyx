@@ -1,0 +1,387 @@
+{
+  "info": {
+    "name": "OMR Blockchain Backend API",
+    "description": "Complete API collection for OMR Blockchain Backend - Testing all endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "sheet_id",
+      "value": "SHEET_0001",
+      "type": "string"
+    },
+    {
+      "key": "roll_number",
+      "value": "ROLL2024001",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. System Health",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/health",
+              "host": ["{{base_url}}"],
+              "path": ["health"]
+            }
+          }
+        },
+        {
+          "name": "Root Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/",
+              "host": ["{{base_url}}"],
+              "path": [""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Scan Block APIs",
+      "item": [
+        {
+          "name": "Create Scan Block",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sheet_id\": \"{{sheet_id}}\",\n  \"roll_number\": \"{{roll_number}}\",\n  \"exam_id\": \"EXAM_2024_FINAL\",\n  \"student_name\": \"John Doe\",\n  \"file_hash\": \"a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6\",\n  \"metadata\": {\n    \"exam_date\": \"2024-11-29\",\n    \"subject\": \"Mathematics\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/scan/create",
+              "host": ["{{base_url}}"],
+              "path": ["api", "scan", "create"]
+            }
+          }
+        },
+        {
+          "name": "Get Scan Block",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/scan/{{sheet_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "scan", "{{sheet_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Bubble Interpretation APIs",
+      "item": [
+        {
+          "name": "Create Bubble Block",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sheet_id\": \"{{sheet_id}}\",\n  \"extraction_method\": \"ai_model_a\",\n  \"bubbles\": [\n    {\n      \"question_number\": 1,\n      \"detected_answer\": \"A\",\n      \"confidence\": 0.95,\n      \"bubble_coordinates\": {\"x\": 10, \"y\": 20, \"w\": 5, \"h\": 5},\n      \"shading_quality\": 0.92\n    },\n    {\n      \"question_number\": 2,\n      \"detected_answer\": \"B\",\n      \"confidence\": 0.89,\n      \"bubble_coordinates\": {\"x\": 10, \"y\": 30, \"w\": 5, \"h\": 5},\n      \"shading_quality\": 0.88\n    }\n  ],\n  \"metadata\": {}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/bubble/create",
+              "host": ["{{base_url}}"],
+              "path": ["api", "bubble", "create"]
+            }
+          }
+        },
+        {
+          "name": "Get Bubble Block",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/bubble/{{sheet_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "bubble", "{{sheet_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. AI Scoring APIs",
+      "item": [
+        {
+          "name": "Create Score Block",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sheet_id\": \"{{sheet_id}}\",\n  \"model_name\": \"model_a\",\n  \"overall_confidence\": 0.93,\n  \"predictions\": [\n    {\n      \"question_number\": 1,\n      \"predicted_answer\": \"A\",\n      \"confidence\": 0.95\n    },\n    {\n      \"question_number\": 2,\n      \"predicted_answer\": \"B\",\n      \"confidence\": 0.89\n    }\n  ],\n  \"metadata\": {}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/score/create",
+              "host": ["{{base_url}}"],
+              "path": ["api", "score", "create"]
+            }
+          }
+        },
+        {
+          "name": "Get Score Block",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/score/{{sheet_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "score", "{{sheet_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. Verification APIs",
+      "item": [
+        {
+          "name": "Create Verification Block",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sheet_id\": \"{{sheet_id}}\",\n  \"verification_data\": {\n    \"verified\": true\n  },\n  \"signatures\": [\n    {\n      \"signer_type\": \"ai-verifier\",\n      \"signer_key\": \"ai-verifier-public-key\"\n    },\n    {\n      \"signer_type\": \"human-verifier\",\n      \"signer_key\": \"human-verifier-public-key\"\n    },\n    {\n      \"signer_type\": \"admin-controller\",\n      \"signer_key\": \"admin-controller-public-key\"\n    }\n  ],\n  \"metadata\": {}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/verify/create",
+              "host": ["{{base_url}}"],
+              "path": ["api", "verify", "create"]
+            }
+          }
+        },
+        {
+          "name": "Get Verification Block",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/verify/{{sheet_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "verify", "{{sheet_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. Result APIs",
+      "item": [
+        {
+          "name": "Commit Final Result",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sheet_id\": \"{{sheet_id}}\",\n  \"roll_number\": \"{{roll_number}}\",\n  \"total_questions\": 50,\n  \"correct_answers\": 42,\n  \"incorrect_answers\": 6,\n  \"unanswered\": 2,\n  \"total_marks\": 84,\n  \"percentage\": 84.0,\n  \"grade\": \"A\",\n  \"answers\": [\n    {\n      \"question_number\": 1,\n      \"correct_answer\": \"A\",\n      \"student_answer\": \"A\",\n      \"is_correct\": true,\n      \"confidence\": 0.95,\n      \"marks_awarded\": 2.0\n    }\n  ],\n  \"model_outputs\": {},\n  \"signatures\": [\n    {\n      \"signer_type\": \"ai-verifier\",\n      \"signer_key\": \"ai-verifier-public-key\"\n    },\n    {\n      \"signer_type\": \"human-verifier\",\n      \"signer_key\": \"human-verifier-public-key\"\n    },\n    {\n      \"signer_type\": \"admin-controller\",\n      \"signer_key\": \"admin-controller-public-key\"\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/result/commit",
+              "host": ["{{base_url}}"],
+              "path": ["api", "result", "commit"]
+            }
+          }
+        },
+        {
+          "name": "Get Result by Roll Number",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/result/{{roll_number}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "result", "{{roll_number}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "7. Recheck APIs",
+      "item": [
+        {
+          "name": "Create Recheck Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sheet_id\": \"{{sheet_id}}\",\n  \"requested_by\": \"student@example.com\",\n  \"reason\": \"Question 5 answer seems incorrect\",\n  \"questions_to_recheck\": [5, 12, 23]\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/recheck/create",
+              "host": ["{{base_url}}"],
+              "path": ["api", "recheck", "create"]
+            }
+          }
+        },
+        {
+          "name": "Get Recheck Requests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/recheck/{{sheet_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "recheck", "{{sheet_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "8. Blockchain Utilities",
+      "item": [
+        {
+          "name": "Get Blockchain Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/blockchain/stats",
+              "host": ["{{base_url}}"],
+              "path": ["api", "blockchain", "stats"]
+            }
+          }
+        },
+        {
+          "name": "Validate Blockchain",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/blockchain/validate",
+              "host": ["{{base_url}}"],
+              "path": ["api", "blockchain", "validate"]
+            }
+          }
+        },
+        {
+          "name": "Get Block Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/blockchain/block/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "blockchain", "block", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Chain Proof",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/blockchain/proof/5",
+              "host": ["{{base_url}}"],
+              "path": ["api", "blockchain", "proof", "5"]
+            }
+          }
+        },
+        {
+          "name": "Export Blockchain",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/blockchain/export",
+              "host": ["{{base_url}}"],
+              "path": ["api", "blockchain", "export"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "9. AI Integration Hooks",
+      "item": [
+        {
+          "name": "AI Models Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/ai/models/status",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "models", "status"]
+            }
+          }
+        },
+        {
+          "name": "AI Bubble Detection (Placeholder)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sheet_id\": \"{{sheet_id}}\",\n  \"image_regions\": [],\n  \"model_version\": \"v1.0\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/ai/bubble-detection",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "bubble-detection"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

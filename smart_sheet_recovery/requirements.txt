@@ -1,0 +1,20 @@
+# Smart Sheet Recovery - OMR Backend
+# Python Dependencies
+
+# FastAPI and Server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pydantic==2.5.0
+
+# AWS Bedrock
+boto3==1.29.7
+botocore==1.32.7
+
+# Computer Vision
+opencv-python>=4.8.0
+numpy>=1.26.0
+pillow>=10.0.0
+
+# Additional utilities
+python-dotenv==1.0.0

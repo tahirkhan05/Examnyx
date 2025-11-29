@@ -1,0 +1,129 @@
+{
+  "image": "C:\\Users\\DrRay\\Downloads\\omr sheet.jpeg",
+  "detected_answers": {
+    "1": "A",
+    "2": "X",
+    "3": "X",
+    "4": "X",
+    "5": "B",
+    "6": "B",
+    "7": "C",
+    "8": "A",
+    "9": "B",
+    "10": "B"
+  },
+  "voting_details": [
+    {
+      "q": "1",
+      "answer": "A",
+      "votes": [
+        "A",
+        "A",
+        "D"
+      ],
+      "unanimous": false,
+      "confidence": 0.6666666666666666
+    },
+    {
+      "q": "2",
+      "answer": "X",
+      "votes": [
+        "X",
+        "B",
+        "A"
+      ],
+      "unanimous": false,
+      "confidence": 0.3333333333333333
+    },
+    {
+      "q": "3",
+      "answer": "X",
+      "votes": [
+        "X",
+        "C",
+        "A"
+      ],
+      "unanimous": false,
+      "confidence": 0.3333333333333333
+    },
+    {
+      "q": "4",
+      "answer": "X",
+      "votes": [
+        "X",
+        "D",
+        "A"
+      ],
+      "unanimous": false,
+      "confidence": 0.3333333333333333
+    },
+    {
+      "q": "5",
+      "answer": "B",
+      "votes": [
+        "B",
+        "A",
+        "D"
+      ],
+      "unanimous": false,
+      "confidence": 0.3333333333333333
+    },
+    {
+      "q": "6",
+      "answer": "B",
+      "votes": [
+        "D",
+        "B",
+        "B"
+      ],
+      "unanimous": false,
+      "confidence": 0.6666666666666666
+    },
+    {
+      "q": "7",
+      "answer": "C",
+      "votes": [
+        "C",
+        "C",
+        "C"
+      ],
+      "unanimous": true,
+      "confidence": 1.0
+    },
+    {
+      "q": "8",
+      "answer": "A",
+      "votes": [
+        "X",
+        "A",
+        "A"
+      ],
+      "unanimous": false,
+      "confidence": 0.6666666666666666
+    },
+    {
+      "q": "9",
+      "answer": "B",
+      "votes": [
+        "B",
+        "B",
+        "A"
+      ],
+      "unanimous": false,
+      "confidence": 0.6666666666666666
+    },
+    {
+      "q": "10",
+      "answer": "B",
+      "votes": [
+        "B",
+        "C",
+        "A"
+      ],
+      "unanimous": false,
+      "confidence": 0.3333333333333333
+    }
+  ],
+  "unanimous_count": 1,
+  "total_questions": 10
+}

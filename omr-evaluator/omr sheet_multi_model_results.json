@@ -1,0 +1,145 @@
+{
+  "final_answers": {
+    "1": "A",
+    "2": "X",
+    "3": "X",
+    "4": "X",
+    "5": "B",
+    "6": "D",
+    "7": "C",
+    "8": "A",
+    "9": "B",
+    "10": "A"
+  },
+  "detailed": {
+    "1": {
+      "answer": "A",
+      "confidence": 0.5,
+      "votes": {
+        "A": 1,
+        "?": 1
+      },
+      "unanimous": false
+    },
+    "2": {
+      "answer": "X",
+      "confidence": 0.5,
+      "votes": {
+        "X": 1,
+        "?": 1
+      },
+      "unanimous": false
+    },
+    "3": {
+      "answer": "X",
+      "confidence": 0.5,
+      "votes": {
+        "X": 1,
+        "?": 1
+      },
+      "unanimous": false
+    },
+    "4": {
+      "answer": "X",
+      "confidence": 0.5,
+      "votes": {
+        "X": 1,
+        "?": 1
+      },
+      "unanimous": false
+    },
+    "5": {
+      "answer": "B",
+      "confidence": 0.5,
+      "votes": {
+        "B": 1,
+        "?": 1
+      },
+      "unanimous": false
+    },
+    "6": {
+      "answer": "D",
+      "confidence": 0.5,
+      "votes": {
+        "D": 1,
+        "?": 1
+      },
+      "unanimous": false
+    },
+    "7": {
+      "answer": "C",
+      "confidence": 0.5,
+      "votes": {
+        "C": 1,
+        "?": 1
+      },
+      "unanimous": false
+    },
+    "8": {
+      "answer": "A",
+      "confidence": 0.5,
+      "votes": {
+        "A": 1,
+        "?": 1
+      },
+      "unanimous": false
+    },
+    "9": {
+      "answer": "B",
+      "confidence": 0.5,
+      "votes": {
+        "B": 1,
+        "?": 1
+      },
+      "unanimous": false
+    },
+    "10": {
+      "answer": "A",
+      "confidence": 0.5,
+      "votes": {
+        "A": 1,
+        "?": 1
+      },
+      "unanimous": false
+    }
+  },
+  "disagreements": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "unanimous_count": 0,
+  "total_questions": 10,
+  "overall_confidence": 0.5,
+  "provider_results": {
+    "groq": {
+      "answers": {
+        "1": "A",
+        "2": "X",
+        "3": "X",
+        "4": "X",
+        "5": "B",
+        "6": "D",
+        "7": "C",
+        "8": "A",
+        "9": "B",
+        "10": "A"
+      },
+      "confidence": 0.95,
+      "provider": "Groq (Llama 4 Scout)"
+    },
+    "openrouter": {
+      "answers": {},
+      "confidence": 0,
+      "error": "<!DOCTYPE html>\n<!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 7]>    <html class=\"no-js ie7 oldie\" lang=\"en-US\"> <![endif]-->\n<!--[if IE 8]>    <html class=\"no-",
+      "provider": "OpenRouter (Qwen Vision)"
+    }
+  }
+}
