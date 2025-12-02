@@ -23,6 +23,10 @@ from .storage_service import (
     S3StorageService,
     get_s3_service
 )
+from .omr_evaluator_service import (
+    OMREvaluatorService,
+    get_omr_evaluator_service
+)
 
 __all__ = [
     "SignerType",
@@ -37,5 +41,7 @@ __all__ = [
     "AuditLogger",
     "get_audit_logger",
     "S3StorageService",
-    "get_s3_service"
+    "get_s3_service",
+    "OMREvaluatorService",
+    "get_omr_evaluator_service"
 ]

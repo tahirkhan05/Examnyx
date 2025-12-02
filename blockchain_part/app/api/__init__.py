@@ -10,6 +10,7 @@ from .result_routes import router as result_router
 from .recheck_routes import router as recheck_router
 from .ai_routes import router as ai_router
 from .blockchain_routes import router as blockchain_router
+from .omr_evaluation_routes import router as omr_router
 
 __all__ = [
     "scan_router",
@@ -19,5 +20,6 @@ __all__ = [
     "result_router",
     "recheck_router",
     "ai_router",
-    "blockchain_router"
+    "blockchain_router",
+    "omr_router"
 ]

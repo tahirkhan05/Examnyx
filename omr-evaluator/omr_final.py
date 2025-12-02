@@ -156,7 +156,34 @@ def detect_single_pass(image_data, api_key, prompt, pass_num):
                         text = text[start:i+1]
                         break
         
-        return json.loads(text)
+        # Try parsing JSON
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError as je:
+            # Try to fix common JSON issues
+            import re
+            
+            # Fix single quotes to double quotes
+            fixed_text = text.replace("'", '"')
+            
+            # Remove trailing commas
+            fixed_text = re.sub(r',\s*}', '}', fixed_text)
+            fixed_text = re.sub(r',\s*]', ']', fixed_text)
+            
+            # Try to extract answers using regex as fallback
+            try:
+                return json.loads(fixed_text)
+            except:
+                # Last resort: try to extract answers with regex
+                answer_pattern = r'"(\d+)":\s*"([A-DX])"'
+                matches = re.findall(answer_pattern, text, re.IGNORECASE)
+                
+                if matches:
+                    answers = {q: a.upper() for q, a in matches}
+                    return {"answers": answers, "confidence": 0.7}
+                
+                print(f"   JSON parse error: {str(je)[:50]}")
+                return None
         
     except Exception as e:
         print(f"   Error: {e}")

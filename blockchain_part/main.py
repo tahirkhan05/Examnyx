@@ -13,7 +13,8 @@ from app.api import (
     result_router,
     recheck_router,
     ai_router,
-    blockchain_router
+    blockchain_router,
+    omr_router
 )
 from app.api.question_paper_routes import router as question_paper_router
 from app.api.quality_routes import router as quality_router
@@ -163,6 +164,7 @@ app.include_router(result_router, prefix="/api")
 app.include_router(recheck_router, prefix="/api")
 app.include_router(ai_router, prefix="/api")
 app.include_router(blockchain_router, prefix="/api")
+app.include_router(omr_router, prefix="/api")
 
 # Include routers - Integrated OMR Evaluation System
 app.include_router(question_paper_router, prefix="/api")
